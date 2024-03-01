@@ -84,12 +84,32 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'buysmart',
+        'USER': 'buysmart',
+        'PASSWORD': 'buysmart',
+        'HOST': 'busysmart.cpmgymy4sl6q.us-west-2.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
+
+
+
+
+
+
 
 
 # Password validation
@@ -158,6 +178,29 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+
+
+
+
+# -------------------for aws bucket-------------
+
+AWS_ACCESS_KEY_ID = 'AKIA5FTZCP3DXEP46UVO'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'buysmart106'
+AWS_S3_SIGNATURE_VERSION = 's3v4'  # Signature version (optional, defaults to 's3v4')
+AWS_S3_REGION_NAME = 'us-west-2'  # e.g., 'us-east-1'
+
+# File overwrite behavior (optional, defaults to True)
+AWS_S3_FILE_OVERWRITE = False
+
+# Default ACL for files stored in S3 (optional, defaults to 'public-read')
+AWS_DEFAULT_ACL = None
+
+# Whether to verify SSL certificates when connecting to S3 (optional, defaults to True)
+AWS_S3_VERIFY = True
+
+# Custom storage class for default file storage (optional)
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
