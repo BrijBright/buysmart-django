@@ -7,7 +7,7 @@ This project is a fully functional e-commerce platform developed using HTML, CSS
 
 
 ## Demo
-Check out the live demo: [buysmart](https://brijkishor.pythonanywhere.com/)
+***Check out the live demo:*** [buysmart](https://brijkishor.pythonanywhere.com/)
 
 ## Features
 
