@@ -27,50 +27,22 @@ Check out the live demo: [buysmart](https://brijkishor.pythonanywhere.com/)
 
 
 
+## Technologies Used
+- Django: Python web framework for backend development.
+- Bootstrap: CSS framework for responsive and attractive front-end design.
+- SQLite: Database management system for storing data.
+- JavaScript: Enhances user experience with interactive features.
+- HTML and CSS: Markup and styling of web pages.
+- Font Awesome: Provides icons for a visually appealing interface.
 
 
+## Getting Started
+1. Clone the repository: `git clone <repository-url>`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run migrations: `python manage.py migrate`
+4. Create a superuser: `python manage.py createsuperuser`
+5. Start the development server: `python manage.py runserver`
 
-## Installation
-
-To run the application locally, follow these steps:
-
-1. Clone the repository to your local machine:
-
-    ```
-    git clone <repository-url>
-    ```
-
-2. Navigate to the project directory:
-
-    ```
-    cd <project-directory>
-    ```
-
-3. Install the required dependencies:
-
-    ```
-    pip install -r requirements.txt
-    ```
-
-4. Set up the database:
-
-    ```
-    python manage.py migrate
-    ```
-
-5. Create a superuser account (for accessing the admin panel):
-
-    ```
-    python manage.py createsuperuser
-    ```
-
-6. Run the development server:
-
-    ```
-    python manage.py runserver
-    ```
-
-7. Access the application in your web browser at `http://localhost:8000`.
 
 ## Usage
 
@@ -85,17 +57,39 @@ To run the application locally, follow these steps:
 
 ### 1. Home Page
 
-![App Screenshot](static/1.png)
-![App Screenshot](static/2.png)
-![App Screenshot](static/3.png)
+![App Screenshot](ss/home.png)
 
 ### 2. Product Catalog
 
-### 3. Product Details
+![App Screenshot](ss/catalog.png)
 
-### 4. User Authentication
+### 5. Shopping Cart and Payment
+![App Screenshot](ss/cart.png)
+![App Screenshot](ss/make_payment.png)
+![App Screenshot](ss/payment_process.png)
+![App Screenshot](ss/invoice.png)
 
-### 5. Shopping Cart
+
+### 6. Admin Panel
+
+![App Screenshot](ss/admin2.png)
+![App Screenshot](ss/admin3.png)
+![App Screenshot](ss/admin4.png)
+![App Screenshot](ss/admin1.png)
+
+### 4. Dashboard and Authentication
+![App Screenshot](ss/dashboard.png)
+![App Screenshot](ss/profile.png)
+![App Screenshot](ss/review.png)
+![App Screenshot](ss/login.png)
+![App Screenshot](ss/register.png)
+
+
+<!-- ### 3. Product Details
+
+
+
+
 
 ### 6. Admin Panel
 
@@ -111,5 +105,5 @@ To run the application locally, follow these steps:
 ![App Screenshot](static/8.png)
 ![App Screenshot](static/9.png)
 ![App Screenshot](static/10.png)
-![App Screenshot](static/11.png)
+![App Screenshot](static/11.png) -->
 
