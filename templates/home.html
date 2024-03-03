@@ -24,7 +24,7 @@
 	<h3 class="section-title">Popular products</h3>
 </header><!-- sect-heading -->
 
-	
+
 <div class="row">
 
 	{% for product in products %}
@@ -33,15 +33,15 @@
 			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
 			<figcaption class="info-wrap">
 				<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
-				<div class="price mt-1">$ {{ product.price }}</div> <!-- price-wrap.// -->
-				
+				<div class="price mt-1">₹ {{ product.price }}</div> <!-- price-wrap.// -->
+
 			</figcaption>
 		</div>
 	</div> <!-- col.// -->
 	{% endfor %}
 
 
-	
+
 
 
 

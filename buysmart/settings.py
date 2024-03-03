@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG',default=True,cast=bool)
 
-ALLOWED_HOSTS = ['buysmart1.eba-32jzhgcr.us-west-2.elasticbeanstalk.com','*']
+ALLOWED_HOSTS = ['brijkishor.pythonanywhere.com']
 
 
 # Application definition
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'whitenoise.runserver_nostatic',     # added         
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -54,7 +53,6 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",         #added
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -65,7 +63,7 @@ ROOT_URLCONF = 'buysmart.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['/home/brijkishor/buysmart/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,32 +84,12 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'buysmart',
-        'USER': 'buysmart',
-        'PASSWORD': 'buysmart',
-        'HOST': 'busysmart.cpmgymy4sl6q.us-west-2.rds.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
-
-
-
 
 
 # Password validation
@@ -140,7 +118,6 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kathmandu'
 
-
 USE_I18N = True
 
 USE_TZ = True
@@ -168,7 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ---------------django message-----------------------
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
-  
+
 }
 
 
@@ -180,29 +157,6 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-
-
-
-
-# -------------------for aws bucket-------------
-
-AWS_ACCESS_KEY_ID = 'AKIA5FTZCP3DXEP46UVO'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'buysmart106'
-AWS_S3_SIGNATURE_VERSION = 's3v4'  # Signature version (optional, defaults to 's3v4')
-AWS_S3_REGION_NAME = 'us-west-2'  # e.g., 'us-east-1'
-
-# File overwrite behavior (optional, defaults to True)
-AWS_S3_FILE_OVERWRITE = False
-
-# Default ACL for files stored in S3 (optional, defaults to 'public-read')
-AWS_DEFAULT_ACL = None
-
-# Whether to verify SSL certificates when connecting to S3 (optional, defaults to True)
-AWS_S3_VERIFY = True
-
-# Custom storage class for default file storage (optional)
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 

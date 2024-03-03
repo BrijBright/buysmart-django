@@ -1,0 +1,15 @@
+#useless file
+
+
+from store.models import Product, Variation
+sizes = ['30', '45', '55']
+colors = ['Red', 'Green', 'Blue']
+
+Variation.objects.all().delete()
+products = Product.objects.all()
+
+for product in products:
+    for size in sizes:
+        Variation.objects.create(product=product, variation_category='size', variation_value=size)
+    for color in colors:
+        Variation.objects.create(product=product, variation_category='color', variation_value=color)
